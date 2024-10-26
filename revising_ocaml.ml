@@ -33,4 +33,11 @@ end
 ;;printer "7th fibonacci number is " (fibo 7)
 
 
+let rec factorial(x: int): int = 
+  begin match x with
+  |0 -> 1
+  |1 -> 1
+  |_ -> x * factorial (x-1)
+end
 
+;;printer "Factorial of 4 is " (factorial 4)
