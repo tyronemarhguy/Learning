@@ -41,3 +41,13 @@ let rec factorial(x: int): int =
 end
 
 ;;printer "Factorial of 4 is " (factorial 4)
+
+let rec firstNevens(x: int): int list = 
+  begin match x with
+  |0 -> []
+  |_ ->  firstNevens (x - 1) @ [(x * 2)]
+end
+
+let test(): bool = firstNevens 4 = [2;4;6;8]
+
+;;print_endline(string_of_bool(test()))
