@@ -2,7 +2,7 @@ let printer (message: string)(value: int):unit =
   print_endline(message ^": "^string_of_int(value))
 let x = 7 and y = 4;
 
-;;printer "Sum of 7 and 4 is "(x + y)
+;;printer "Sum of 7 and 4 is " (x + y)
 
 let prod = 
 
@@ -51,3 +51,15 @@ end
 let test(): bool = firstNevens 4 = [2;4;6;8]
 
 ;;print_endline(string_of_bool(test()))
+
+
+let rec firstNodd (x: int): int list = 
+  begin match x with
+  |0 -> []
+  |_ -> firstNodd (x-1) @ [(2*x - 1)]
+end
+
+
+let test(): bool = firstNodd 4 = [1;3;5;7]
+
+;;print_endline (string_of_bool (test()))
